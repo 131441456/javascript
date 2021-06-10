@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+</head>
+<body>
+	<form action="#" onsubmit="return validation()">
+		username:
+		<input type="text" name="" id="user"  >
+		<span id="username" style="color: red;"></span>
+		<br>
+		Password:
+		<input type="password" name="" id="pass"  >
+		<span id="password" style="color: red;"></span>
+		<br>
+		Confirm Password:
+		<input type="password" name="" id= "confirm">
+		<span id="Confirm_password" style="color:red;"></span>
+		<br>
+		
+		Email:
+		<input type="text" name="" id="email"  >
+		<span id="email" style="color: red;"></span>
+		<br>
+		Phone:
+		<input type="text" name="" id="phone">
+		<span id="mobile_number" style="color: red;"></span>
+		<br>
+
+		<button type="submit">submit</button>
+	</form>
+
+	<script >
+		
+     function validation(){
+     	var user = document.getElementById('user').value;//get
+     	var pass = document.getElementById('pass').value;//get
+     	var confirm = document.getElementById('confirm').value;
+        var email = document.getElementById('email').value;
+        var phone = document.getElementById('phone').value;
+
+     	if(user==""){
+
+     		document.getElementById('username').innerHTML="** Please fill the username field";//set
+     		return false;
+     	}
+     	if((user.length <= 2) || (user.length > 20)) {
+				document.getElementById('username').innerHTML =" ** Username lenght must be between 2 and 20";//set
+				return false;	
+			}
+		if((!isNaN(user))){
+			document.getElementById('username').innerHTML ="** username must be character";
+			return false;	
+				}
+
+		if(pass==""){
+
+     		document.getElementById('password').innerHTML="** Please fill the password field";//set
+     		return false;
+     	}
+     	if((pass.length <= 8) || (pass.length > 20)) {
+				document.getElementById('password').innerHTML =" ** password lenght must be between 8 and 20";//set
+				return false;	
+			}
+		if(pass!=confirm){
+			document.getElementById('Confirm_password').innerHTML="**password and confirm password is not match";
+			return false;
+		}
+		if(email==""){
+			document.getElementById('email').innerHTML="** Please fill the email field";//set
+     		return false;
+		}
+		if(phone==""){
+			document.getElementById('mobile_number').innerHTML="** Please fill the mobile number";//set
+     		return false;
+		}
+		if(phone.length!=10){
+			document.getElementById('mobile_number').innerHTML="** mobile number should be 10 number";//set
+     		return false;
+		}
+		if(isNaN(phone)){
+			document.getElementById('mobile_number').innerHTML="** only number is allow you can not fill character";//set
+     		return false;
+		}
+
+
+
+
+     }
+
+
+
+
+	</script>
+
+</body>
+</html>

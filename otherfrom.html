@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<select name = "" onchange ='checkvalue(this.value)'>
+		<option>College</option>
+		<option value = "red">Rjit</option>
+		<option value="blue">itm</option>
+		<option value="others">other</option>
+
+		
+
+	</select>
+	<input type="text" name="" id="color" style= 'display:none'/>
+	<button>submit</button>
+
+	<script type="text/javascript">
+		
+    function checkvalue(val)
+    {
+    	if(val==="others")
+    		document.getElementById('color').style.display = 'block';
+    	else
+    		document.getElementById('color').style.display = 'none';
+    }
+
+
+
+
+
+	</script>
+    
+
+
+
+</body>
+</html>
